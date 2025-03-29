@@ -69,7 +69,7 @@ $ docker compose run --rm web bin/rails tailwindcss:install
 daisyUIをインストールする。以下のコマンドを実行する。
 
 ```
-$ docker compose run --rm web yarn add -D daisyui@4
+$ docker compose run --rm web yarn add daisyui@4
 $ docker compose run --rm web yarn add postcss  # 上記のdaisyUIのインストールコマンドだけではダメみたい
 ```
 
@@ -113,3 +113,11 @@ $ docker compose up
 コンテナの起動を確認したら、以下のURLにアクセスして、Railsの初期画面が表示されるか確認する。
 
 http://localhost:3000/
+
+## アプリの動作確認のためにscaffoldを使ってCRUD機能を実装する
+
+以下のコマンドを実行する。
+
+```
+$ docker compose exec web bin/rails g scaffold tasks name:string --skip-jbuilder --skip-helper --skip-test-framework
+```
